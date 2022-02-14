@@ -3,6 +3,35 @@ import numpy as np
 import pandas as pd
 import joblib
 import pickle
+
+from tensorflow.python.keras.models import load_model
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+from keras.preprocessing import image
+from keras.applications.vgg16 import preprocess_input 
+import numpy as np
+from torch import classes
+
+model=load_model('model_vgg16.h5')
+root='D:/STUDY FILES/Breast_Cancer_prediction-main/chest_xray/val/'
+
+def lungPredict(fileName):
+    
+    
+    img=image.load_img(root+fileName,target_size=(224,224))
+    x=image.img_to_array(img)
+    x=np.expand_dims(x,axis=0)
+    img_data=preprocess_input(x)
+    classes=model.predict(img_data)
+    if(classes[0][0]):
+        return 1
+    else:
+        return 0
+
+
+
+
 app = Flask(__name__)
 model2 = joblib.load('model_save2')
 @app.route("/index.html")
@@ -68,7 +97,18 @@ def predict():
         else:
             return  render_template('Malignant.html')
  
+@app.route('/predict2',methods=['GET', 'POST'])
+def predict2():
 
+    if request.method == 'POST':
+        image_file=request.files['image']
+        location=image_file.filename
+        if(lungPredict(image_file.filename)):
+            return render_template('normalLung.html',image_loc=location)
+        else:
+            return render_template('infectedLung.html',image_loc=location)
+    
+    
     
 if __name__ == "__main__":
     app.run(debug=True)

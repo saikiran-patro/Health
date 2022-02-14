@@ -14,6 +14,7 @@
     <title>Bio App</title>
 </head>
 <body>
+
     <div>
     <nav class=" navbar navbar-expand-lg navbar-light navBio  ">
         <a class="navbar-brand" href="#" style="color:#FAEDF0; ;margin-left: 10px;">Bio <span style="color:#EC255A">App</span> </a>
@@ -48,41 +49,14 @@
         </div>
     </nav>
 
-
-    <div class="top1">
-        <div class="top1-left">
-            <h1>Health Diagnosis System</h1>
-            <p>A one stop solution to provide medical diagnosis information using technology</p>
-        </div>
-        <div class="top1-right">
-            <img src="{{url_for('static', filename='images/homeImg.png')}}" alt="hellow">
-        </div>
-    </div>
-
-    <div class="middle">
-       
-        <div class="middle-child">
-            <img src="{{url_for('static', filename='images/middle1.png')}}" alt="">
-            <br>
-            <br>
-
-           <a href="cancer1.html"> <button type="button" class="btn btn-dark">Breast Cancer <i class="fas fa-arrow-right"></i> </button></a>
-        </div>
-        <div class="middle-child">
-            <img src="{{url_for('static', filename='images/lung.png')}}" alt="">
-            <br>
-            <br>
-
-           <a href="cancer2.html"> <button type="button" class="btn btn-dark">Lung Disease <i class="fas fa-arrow-right"></i> </button></a>
-        </div>
-        
-       
-        
-    </div>
-    <div class="footer">
+    <div id="results">
          
-         <p><i class="fas fa-copyright"></i> Copyright 2021 Bio <span style="color:#EC255A">App</span></p>
+          <img id="normal_lung" src="static/images/{{image_loc}}" alt="">
+          <h2>Result: <span style="color:#34BE82; font-weight: bold"> Normal</span></h2>
 
     </div>
+
+   
+
 </body>
 </html>

@@ -49,9 +49,12 @@
 
     <div class="lungContainer">
 
-        <h1>Upload Image File</h1>
+        <h1 style="margin:25px;">Upload Image File</h1>
+        <img src="{{url_for('static', filename='images/NORMAL2-IM-1440-0001.jpeg')}}"/>
          <div id="lung_form">
-            <form method="post" action ="/predict2" style="width: 20%">
+
+            
+            <form method="POST" action ="/predict2" style="width: 20%" enctype="multipart/form-data">
                 <div class="file-input">
                     <input type="file" id="file" class="file" name="image">
                     

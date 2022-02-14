@@ -216,6 +216,34 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
+}
+#results{
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#normal_lung{
+    width:500px;
+    height:500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border:10px solid #34BE82;
+    padding:10px;
+}
+#infected_lung{
+    width:500px;
+    height:500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border:10px solid #DD4A48;
+    padding:10px;
+
+
+
 }
 /* cancer page styling */
 

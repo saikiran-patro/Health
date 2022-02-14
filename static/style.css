@@ -1,0 +1,239 @@
+body{
+    background-color:#EBF0F5;
+}
+
+.navBio{
+
+    background-color: #292C6D;
+    color:#FAEDF0;
+    font-weight: bold;
+
+}
+
+.top1{
+    display:flex;
+    flex-direction: row;
+   
+    justify-content:space-between;
+    flex-wrap: wrap;
+    background-color: #292C6D;
+    padding:100px;
+
+}
+.top1-right{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.top1-right,img{
+    
+    width:250px;
+    height:200px;
+    border-radius: 15px;
+}
+.top1-left h1{
+color:#FAEDF0;
+font-size: 230%;
+}
+.top1-left{
+    width:50%;
+    color:#FAEDF0;
+}
+
+/* middle UI */
+.middle{
+    display:flex;
+    flex-direction:row;
+    margin-top:50px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.middle-child{
+    
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    margin:30px;
+    border-radius: 20px;
+    padding:20px;
+    width:280px;
+    height:350px;
+    box-shadow: 0px -1px 10px 2px #393e46; 
+    transition: 300ms ease-in-out;
+
+}
+
+.middle-child img{
+    width:200px;
+    height:200px;
+
+}
+
+.middle-child:hover  {
+  
+    cursor:pointer;
+    background-color:#292C6D;
+
+}
+.footer{
+
+    margin-top: 100px;
+
+    width:100%;
+    height:100%;
+   padding-top: 20px;
+    background-color: #292C6D;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+.footer p{
+    color:#FAEDF0;
+
+    
+}
+input{
+    border:none;
+    
+    border-bottom: 1px solid #292C6D;
+    
+}
+.formsection {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+}
+
+
+.parameters{
+    width:1000px;
+    display:flex;
+    flex-direction: row;
+    margin-top:25px !important;
+    justify-content:space-between;
+    align-items:center;
+   
+
+}
+label{
+    font-weight: bold;
+    font-size:large;
+}
+.info1{
+    margin:20px;
+    margin-top: 80px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    margin-top:30px;
+    flex-direction:row;
+    flex-wrap: wrap;
+    color:#292C6D;
+}
+.info1-left{
+    width:50%;
+    font-family: 'Concert One', cursive;
+    font-size:1.30rem;
+}
+.info1-right img{
+   width:350px;
+   height:250px;
+}
+.info1-end{
+    width:80%;
+    font-family: 'Concert One', cursive;
+    font-size:1.8rem;
+
+}
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+  #file_select {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: linear-gradient(40deg, #292C6D,#39A2DB,#A2DBFA);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+  }
+  .lungContainer{
+
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    flex:1;
+    flex-grow: 1;
+  }
+
+  .select_submit{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+    
+  }
+  .select_submit button{
+     
+      border:none;
+      border-radius:25px;
+      color:black;
+      font-weight: bold;
+      font-size:20px;
+      padding-left: 50px;
+      padding-right: 50px;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+      background:linear-gradient(40deg, #34BE82,#93FFD8,#CFFFDC);
+  }
+
+
+#lung_form {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* cancer page styling */
+
+.outer-body{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+
+@media(min-width:300px) and (max-width:875px){
+
+    .top1-left{
+        width:100%;
+    }
+    .top1-right{
+        width:100%;
+    }
+}

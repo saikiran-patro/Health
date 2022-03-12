@@ -81,9 +81,6 @@ termcolor==1.1.0
 tf-estimator-nightly==2.8.0.dev2021122109
 threadpoolctl==3.1.0
 tifffile==2022.2.9
-torch==1.10.2+cu113
-torchaudio==0.10.2+cu113
-torchvision==0.11.3+cu113
 tqdm==4.62.3
 transaction==3.0.1
 translationstring==1.4

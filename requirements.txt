@@ -1,7 +1,7 @@
 absl-py==1.0.0
 albumentations==1.1.0
 anykeystore==0.2
-apex @ file:///D:/STUDY%20FILES/PROGRAMMING/WEB%20DEVELOPMENT/PROJECTS/CancerApp/apex
+
 astunparse==1.6.3
 cachetools==5.0.0
 certifi==2021.10.8

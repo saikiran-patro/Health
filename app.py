@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import joblib
 import pickle
+from werkzeug.utils import secure_filename
+
 
 from tensorflow.python.keras.models import load_model
 import os
@@ -11,19 +13,20 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from keras.preprocessing import image
 from keras.applications.vgg16 import preprocess_input 
 import numpy as np
-from torch import classes
+
 
 model=load_model('model_vgg16.h5')
 root='D:/STUDY FILES/Breast_Cancer_prediction-main/chest_xray/val/'
 
-def lungPredict(fileName):
+def lungPredict(filepath,fileName):
     
     
-    img=image.load_img(root+fileName,target_size=(224,224))
+    img=image.load_img(filepath,target_size=(224,224))
     x=image.img_to_array(img)
     x=np.expand_dims(x,axis=0)
     img_data=preprocess_input(x)
     classes=model.predict(img_data)
+    os.remove(filepath)
     if(classes[0][0]):
         return 1
     else:
@@ -52,7 +55,7 @@ def Cancer2():
 @app.route("/predict" , methods=['POST','GET'])
 def predict():
     if(request.method=='POST'):
-        
+        patientID=int(request.form['id'])
         radius_mean=float(request.form['radius_mean'])
         texture_mean=float(request.form['texture_mean']	)
         perimeter_mean=float(request.form['perimeter_mean']	)
@@ -93,17 +96,20 @@ def predict():
 
         print("helo")
         if(int(predict)):
-            return render_template('Benign.html')
+            return render_template('Benign.html',id=patientID)
         else:
-            return  render_template('Malignant.html')
+            return  render_template('Malignant.html',id=patientID)
  
 @app.route('/predict2',methods=['GET', 'POST'])
 def predict2():
 
     if request.method == 'POST':
         image_file=request.files['image']
+        originPath=os.path.dirname(__file__)
+        file_path = os.path.join(originPath, 'uploads', secure_filename(image_file.filename))
+        image_file.save(file_path)
         location=image_file.filename
-        if(lungPredict(image_file.filename)):
+        if(lungPredict(file_path,image_file.filename)):
             return render_template('normalLung.html',image_loc=location)
         else:
             return render_template('infectedLung.html',image_loc=location)

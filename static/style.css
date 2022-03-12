@@ -48,6 +48,7 @@ font-size: 230%;
     margin-top:50px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
 }
 
@@ -253,6 +254,7 @@ label{
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    height:900px;
 }
 
 
